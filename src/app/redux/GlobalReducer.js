@@ -157,7 +157,7 @@ export default function reducer(state = defaultState, action = {}) {
             });
         }
 
-        case LINK_REPLY: {
+        case globalActionConstants.LINK_REPLY: {
             const {
                 author,
                 permlink,
@@ -185,7 +185,7 @@ export default function reducer(state = defaultState, action = {}) {
             return updatedState;
         }
 
-        case UPDATE_ACCOUNT_WITNESS_VOTE: {
+        case globalActionConstants.UPDATE_ACCOUNT_WITNESS_VOTE: {
             const { account, witness, approve } = payload;
             return state.updateIn(
                 ['accounts', account, 'witness_votes'],
@@ -197,12 +197,12 @@ export default function reducer(state = defaultState, action = {}) {
             );
         }
 
-        case UPDATE_ACCOUNT_WITNESS_PROXY: {
+        case globalActionConstants.UPDATE_ACCOUNT_WITNESS_PROXY: {
             const { account, proxy } = payload;
             return state.setIn(['accounts', account, 'proxy'], proxy);
         }
 
-        case DELETE_CONTENT: {
+        case globalActionConstants.DELETE_CONTENT: {
             const { author, permlink } = payload;
             const key = author + '/' + permlink;
             const content = state.getIn(['content', key]);
@@ -220,7 +220,7 @@ export default function reducer(state = defaultState, action = {}) {
             return updatedState;
         }
 
-        case VOTED: {
+        case globalActionConstants.VOTED: {
             const { username, author, permlink, weight } = payload;
             const key = ['content', author + '/' + permlink, 'active_votes'];
             let active_votes = state.getIn(key, List());
@@ -242,7 +242,7 @@ export default function reducer(state = defaultState, action = {}) {
             return state;
         }
 
-        case FETCHING_DATA: {
+        case globalActionConstants.FETCHING_DATA: {
             const { order, category } = payload;
             const new_state = state.updateIn(
                 ['status', category || '', order],
@@ -253,7 +253,7 @@ export default function reducer(state = defaultState, action = {}) {
             return new_state;
         }
 
-        case RECEIVE_DATA: {
+        case globalActionConstants.RECEIVE_DATA: {
             const { data, order, category, accountname } = payload;
             let new_state;
             if (
@@ -308,7 +308,6 @@ export default function reducer(state = defaultState, action = {}) {
             );
             return new_state;
         }
-
         case RECEIVE_RECENT_POSTS: {
             const { data } = payload;
             let new_state = state.updateIn(
@@ -415,126 +414,126 @@ export default function reducer(state = defaultState, action = {}) {
 // Action creators
 
 export const setCollapsed = payload => ({
-    type: SET_COLLAPSED,
+    type: globalActionConstants.SET_COLLAPSED,
     payload,
 });
 
 export const receiveState = payload => ({
-    type: RECEIVE_STATE,
+    type: globalActionConstants.RECEIVE_STATE,
     payload,
 });
 
 export const receiveAccount = payload => ({
-    type: RECEIVE_ACCOUNT,
+    type: globalActionConstants.RECEIVE_ACCOUNT,
     payload,
 });
 
 export const receiveComment = payload => ({
-    type: RECEIVE_COMMENT,
+    type: globalActionConstants.RECEIVE_COMMENT,
     payload,
 });
 
 export const receiveContent = payload => ({
-    type: RECEIVE_CONTENT,
+    type: globalActionConstants.RECEIVE_CONTENT,
     payload,
 });
 
 export const linkReply = payload => ({
-    type: LINK_REPLY,
+    type: globalActionConstants.LINK_REPLY,
     payload,
 });
 
 export const updateAccountWitnessVote = payload => ({
-    type: UPDATE_ACCOUNT_WITNESS_VOTE,
+    type: globalActionConstants.UPDATE_ACCOUNT_WITNESS_VOTE,
     payload,
 });
 
 export const updateAccountWitnessProxy = payload => ({
-    type: UPDATE_ACCOUNT_WITNESS_PROXY,
+    type: globalActionConstants.UPDATE_ACCOUNT_WITNESS_PROXY,
     payload,
 });
 
 export const deleteContent = payload => ({
-    type: DELETE_CONTENT,
+    type: globalActionConstants.DELETE_CONTENT,
     payload,
 });
 
 export const voted = payload => ({
-    type: VOTED,
+    type: globalActionConstants.VOTED,
     payload,
 });
 
 export const fetchingData = payload => ({
-    type: FETCHING_DATA,
+    type: globalActionConstants.FETCHING_DATA,
     payload,
 });
 
 export const receiveData = payload => ({
-    type: RECEIVE_DATA,
+    type: globalActionConstants.RECEIVE_DATA,
     payload,
 });
 
 export const receiveRecentPosts = payload => ({
-    type: RECEIVE_RECENT_POSTS,
+    type: globalActionConstants.RECEIVE_RECENT_POSTS,
     payload,
 });
 
 export const requestMeta = payload => ({
-    type: REQUEST_META,
+    type: globalActionConstants.REQUEST_META,
     payload,
 });
 
 export const receiveMeta = payload => ({
-    type: RECEIVE_META,
+    type: globalActionConstants.RECEIVE_META,
     payload,
 });
 
 export const set = payload => ({
-    type: SET,
+    type: globalActionConstants.SET,
     payload,
 });
 
 export const remove = payload => ({
-    type: REMOVE,
+    type: globalActionConstants.REMOVE,
     payload,
 });
 
 export const update = payload => ({
-    type: UPDATE,
+    type: globalActionConstants.UPDATE,
     payload,
 });
 
 export const setMetaData = payload => ({
-    type: SET_META_DATA,
+    type: globalActionConstants.SET_META_DATA,
     payload,
 });
 
 export const clearMeta = payload => ({
-    type: CLEAR_META,
+    type: globalActionConstants.CLEAR_META,
     payload,
 });
 
 export const fetchJson = payload => ({
-    type: FETCH_JSON,
+    type: globalActionConstants.FETCH_JSON,
     payload,
 });
 
 export const fetchJsonResult = payload => ({
-    type: FETCH_JSON_RESULT,
+    type: globalActionConstants.FETCH_JSON_RESULT,
     payload,
 });
 
 export const showDialog = payload => ({
-    type: SHOW_DIALOG,
+    type: globalActionConstants.SHOW_DIALOG,
     payload,
 });
 
 export const hideDialog = payload => ({
-    type: HIDE_DIALOG,
+    type: globalActionConstants.HIDE_DIALOG,
     payload,
 });
 
 export const getState = payload => ({
-    type: GET_STATE,
+    type: globalActionConstants.GET_STATE,
     payload,
 });
