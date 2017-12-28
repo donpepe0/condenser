@@ -345,22 +345,22 @@
         "spread": "Spread",
         "total": "Suma",
         "available": "Dostępne",
-        "lowest_ask": "Najniższa",
-        "highest_bid": "Najwyższa",
-        "buy_orders": "Oferty skupu",
+        "lowest_ask": "Najniższa oferta",
+        "highest_bid": "Najwyższa oferta",
+        "buy_orders": "Oferty kupna",
         "sell_orders": "Oferty sprzedaży",
-        "trade_history": "Historia wymian",
-        "open_orders": "Złożone zamówienia",
+        "trade_history": "Ostatnie transakcje",
+        "open_orders": "Otwarte oferty",
         "sell_amount_for_atleast":
             "Sprzedaj %(amount_to_sell)s za przynajmniej %(min_to_receive)s (%(effectivePrice)s)",
         "buy_atleast_amount_for":
             "Kup przynajmniej %(min_to_receive)s za %(amount_to_sell)s (%(effectivePrice)s)",
         "price_warning_above":
-            "Ta cena jest o wiele wyższa niż aktualna cena %(marketPrice)s na giełdzie, jesteś pewien?",
+            "Ta cena jest o wiele wyższa niż aktualna cena %(marketPrice)s w markecie, jesteś pewien?",
         "price_warning_below":
-            "Ta cena jest o wiele za niższa niż aktualna cena %(marketPrice)s na giełdzie, jesteś pewien?",
-        "order_cancel_confirm": "Anulować zamówienie %(order_id)s od %(user)s?",
-        "order_cancelled": "Zamówienie %(order_id)s anulowane.",
+            "Ta cena jest o wiele niższa niż aktualna cena %(marketPrice)s w markecie, jesteś pewien?",
+        "order_cancel_confirm": "Anulować ofertę %(order_id)s od %(user)s?",
+        "order_cancelled": "Oferta %(order_id)s została anulowana.",
         "higher": "Wyższe",
         "lower": "Niższe",
         "total_DEBT_TOKEN_SHORT_CURRENCY_SIGN":
